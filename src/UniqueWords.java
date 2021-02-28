@@ -34,5 +34,19 @@ public class UniqueWords
    
 	  int unique = countUnique(words);
       System.out.println(words + " has " + unique + " unique words");
+      
+      ArrayList<String> result = makeUnique(words);
+      System.out.println("There are " + result.size() + " unique elements");
+      
+   }
+   
+   public static ArrayList<String> makeUnique(ArrayList<String> input){
+	   ArrayList<String> uniqueWords = new ArrayList<String>();
+	   for(int i =0;i< input.size(); i++) {
+		   if(!(uniqueWords.contains(input.get(i)))) {
+			   uniqueWords.add(input.get(i));
+		   }
+	   }
+	   return uniqueWords;
    }
 }
